@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InvestmentCalculator</title>
+    <title>Investment Calculator</title>
 
 	<link rel="stylesheet" href="Content\Site.css">
 	
@@ -43,19 +43,7 @@
 
 <div id="Content" class="center row">
 
-    <div class="col-sm-12" style="display:none">
-        <br />
-
-        <h3>Shares</h3>
-        <div class="Zone">
-            <label class="label">Type</label>
-            <select id="Type" onchange="TypeChanged()">
-                <option value="1">Actions</option>
-                <option value="2">Sicav</option>
-            </select>
-        </div>
-
-    </div>
+    
 
     <div class="col-sm">
         <br />
@@ -69,8 +57,8 @@
             <input type="text" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label" data-toggle="tooltip" >STF (%)</label>
-            <input type="number" step="any" class="input-left" id="PercTOBBuy" value="0.35" oninput="CalculateBuy()" onkeypress='validate(event)'  />
+            <label class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
+            <input type="number" step="any" class="input-left" id="PercTOBBuy" value="0.35" oninput="CalculateBuy()" onkeypress='validate(event)'  data-toggle="tooltip" title="Stock Trading Fee"/>
             <input type="text" class="input-right" id="TOBBuy" value="0" disabled />
         </div>
         <div class="Zone">
@@ -99,8 +87,8 @@
             <input type="text" id="PriceSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label" data-toggle="tooltip" >STF (%)</label>
-            <input type="number" step="any" class="input-left" id="PercTOBSell" value="0.35" oninput="CalculateSell()" onkeypress='validate(event)' />
+            <label class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
+            <input type="number" step="any" class="input-left" id="PercTOBSell" value="0.35" oninput="CalculateSell()" onkeypress='validate(event)' data-toggle="tooltip" title="Stock Trading Fee"/>
             <input type="text" class="input-right" id="TOBSell" value="0" disabled />
         </div>
         <div class="Zone">
@@ -121,9 +109,9 @@
         <br />
         <br />
 
-        <h3>CapitalGain</h3>
+        <h3>Capital Gain</h3>
         <div class="Zone">
-            <label class="label">FinalResult</label>
+            <label class="label">Final Result</label>
             <input type="text" id="Result" class="input" value="0" disabled />
         </div>
         <div id="SicavTax">
