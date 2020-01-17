@@ -50,12 +50,14 @@ h3 {
     background-color: #D5D1D1;
 }
 
-.long {
-    display: inline-block;
-}
+@media (min-width: 451px) {
+	.long {
+		display: inline-block;
+	}
 
-.short {
-    display: none;
+	.short {
+		display: none;
+	}
 }
 
 @media (max-width: 450px) {
