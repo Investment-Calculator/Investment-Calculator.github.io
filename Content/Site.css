@@ -58,7 +58,7 @@ h3 {
     display: none;
 }
 
-@media only screen and (max-width: 440px) {
+@media max-width: 450px {
     /* CSS that should be displayed if width is equal to or less than 440px goes here */
     .long{
         display:none;
