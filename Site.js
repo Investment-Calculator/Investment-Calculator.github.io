@@ -125,6 +125,21 @@ function TypeChanged() {
     CalculateSell();
 }
 
+function Translate(Language){
+
+	switch (){
+		case "French":
+			
+			break;
+			
+		default:
+		case "English":
+		
+			break;
+	}
+
+}
+
 function validate(evt) {
     var theEvent = evt || window.event;
 

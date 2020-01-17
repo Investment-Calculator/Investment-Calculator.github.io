@@ -37,8 +37,8 @@
                             Language
                         </a>
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                            <a id="English" class="dropdown-item" > <img src="Images\USA-Flag.png"/> English</a>
-                            <a id="French" class="dropdown-item" > <img src="Images\France-Flag.png" /> French</a>
+                            <a id="English" class="dropdown-item" onclick="Translate('English')"> <img src="Images\USA-Flag.png"/> English</a>
+                            <a id="French" class="dropdown-item" onclick="Translate('French')"> <img src="Images\France-Flag.png" /> French</a>
                         </div>
                     </li>
 
@@ -77,7 +77,8 @@
             <input type="text" id="SharesBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label">Purchase Price</label>
+            <label class="label long">Purchase Price</label>
+			<label class="label short">P. Price</label>
             <input type="text" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
@@ -140,7 +141,7 @@
         </div>
         <div id="SicavTax">
             <div class="Zone Tax">
-                <label class="label">Tax</label>
+                <label class="label">Tax (%)</label>
                 <input type="number" step="any" id="PercTax" class="input-left" value="30" onchange="CalculateTax()" onkeypress='validate(event)' />
                 <input type="text" id="Tax" class="input-right" value="0" disabled />
             </div>
