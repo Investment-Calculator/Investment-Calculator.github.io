@@ -15,7 +15,7 @@
 
 .input-left {
     text-align: right;
-    width: 50px;
+    max-width: 75px;
     margin-right:2px;
     
 }
@@ -24,7 +24,7 @@
     text-align: right;
     
     flex: 1;
-    min-width: 100px;
+    min-width: 130px;
     
 }
 
