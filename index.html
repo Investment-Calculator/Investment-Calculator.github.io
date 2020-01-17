@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvestmentCalculator</title>
+
+	<link rel="stylesheet" href="Content\Site.css">
+	
+	<script src="Site.js"></script>
+    
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+
+    
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+       
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <partial name="_CookieConsentPartial" />
+        <main role="main" class="pb-3">
+           
+
+<div id="Content" class="center row">
+
+    <div class="col-sm-12" style="display:none">
+        <br />
+
+        <h3>Shares</h3>
+        <div class="Zone">
+            <label class="label">Type</label>
+            <select id="Type" onchange="TypeChanged()">
+                <option value="1">Actions</option>
+                <option value="2">Sicav</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="col-sm">
+        <br />
+        <h3>Buy</h3>
+        <div class="Zone">
+            <label class="label">Quantity</label>
+            <input type="text" id="SharesBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+        </div>
+        <div class="Zone">
+            <label class="label">Purchase Price</label>
+            <input type="text" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+        </div>
+        <div class="Zone">
+            <label class="label" data-toggle="tooltip" >STF (%)</label>
+            <input type="number" step="any" class="input-left" id="PercTOBBuy" value="0.35" oninput="CalculateBuy()" onkeypress='validate(event)'  />
+            <input type="text" class="input-right" id="TOBBuy" value="0" disabled />
+        </div>
+        <div class="Zone">
+            <label class="label">Commission</label>
+            <input type="text" id="CommissionBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+        </div>
+
+        <br />
+
+        <div class="Zone">
+            <label class="label">Total Cost</label>
+            <input type="text" id="ResultBuy" class="input" value="0" disabled />
+
+        </div>
+
+    </div>
+    <div class="col-sm">
+        <br />
+        <h3>Sell</h3>
+        <div class="Zone">
+            <label class="label">Quantity</label>
+            <input type="text" id="SharesSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+        </div>
+        <div class="Zone">
+            <label class="label">Sell Price</label>
+            <input type="text" id="PriceSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+        </div>
+        <div class="Zone">
+            <label class="label" data-toggle="tooltip" >STF (%)</label>
+            <input type="number" step="any" class="input-left" id="PercTOBSell" value="0.35" oninput="CalculateSell()" onkeypress='validate(event)' />
+            <input type="text" class="input-right" id="TOBSell" value="0" disabled />
+        </div>
+        <div class="Zone">
+            <label class="label">Commission</label>
+            <input type="text" id="CommissionSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+        </div>
+
+        <br />
+
+        <div class="Zone">
+            <label class="label">Result</label>
+            <input type="text" id="ResultSell" class="input" value="0" disabled />
+
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <br />
+        <br />
+
+        <h3>CapitalGain</h3>
+        <div class="Zone">
+            <label class="label">FinalResult</label>
+            <input type="text" id="Result" class="input" value="0" disabled />
+        </div>
+        <div id="SicavTax">
+            <div class="Zone Tax">
+                <label class="label">Tax</label>
+                <input type="number" step="any" id="PercTax" class="input-left" value="30" onchange="CalculateTax()" onkeypress='validate(event)' />
+                <input type="text" id="Tax" class="input-right" value="0" disabled />
+            </div>
+            <div class="Zone Tax">
+                <label class="label">Net</label>
+                <input type="text" id="Net" class="input" value="0" disabled />
+
+            </div>
+        </div>
+        <br />
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-sm-12 mt-4 text-center">
+        <p style="font-size:10px; font-style:italic;">*This tool has been developed for informational purposes only. The calculations are entirely based on the information you provide, which is your responsibility. The creators are not responsible for the content of the information you receive and cannot guarantee the accuracy or completeness of any information contained in this website. In case of doubt, consult with a financial advisor.</p>
+    </div>
+</div>
+
+        </main>
+    </div>
+
+    
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+
+</body>
+
+
+</html>
+
+

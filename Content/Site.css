@@ -1,0 +1,51 @@
+﻿
+
+.label {
+    width: 150px;
+    text-align: right;
+    padding-right: 5px;
+    height:15px;
+}
+
+.input {
+    text-align: right;
+    
+    flex: 1;
+}
+
+.input-left {
+    text-align: right;
+    width: 50px;
+    margin-right:2px;
+    
+}
+
+.input-right {
+    text-align: right;
+    
+    flex: 1;
+    min-width: 100px;
+    
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.Zone {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    max-width: 450px;
+    padding-top: 5px;
+    
+}
+
+.navbar {
+    background-color: #B21515;
+}
+
+h3 {
+    padding-left:5px;
+    background-color: #D5D1D1;
+}
