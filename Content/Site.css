@@ -4,7 +4,9 @@
     min-width: 150px;
     text-align: right;
     padding-right: 5px;
-    height: 25px;
+    
+    
+
 }
 
 .input {
@@ -36,7 +38,9 @@ input[type=number] {
     min-width: 300px;
     max-width: 450px;
     padding-top: 5px;
-    
+    align-items: center;
+    height: 35px;
+    justify-content: center;
 }
 
 .navbar {
@@ -46,6 +50,7 @@ input[type=number] {
 h3 {
     padding-left:5px;
     background-color: #D5D1D1;
+    min-width:300px;
 }
 
 .separator{
