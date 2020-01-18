@@ -152,12 +152,22 @@ function Translate(Language) {
 
     switch (Language) {
         case "French":
-            $("#Language").text('Français');
+            //DROPDOWN LANGUAGE
+            $("#Language").text('Langue');
+            $("#French").setAttribute('selected', true);
+            $("#French").text('Français');
+            $("#English").setAttribute('selected', false);
+            $("#English").text('Anglais');
             break;
 
         default:
         case "English":
-
+            //DROPDOWN LANGUAGE
+            $("#Language").text('Language');
+            $("#French").setAttribute('selected', false);
+            $("#French").text('French');
+            $("#English").setAttribute('selected', true);
+            $("#English").text('English');
             break;
     }
     console.log(Language);
