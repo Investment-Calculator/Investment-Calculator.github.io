@@ -127,9 +127,9 @@ function TypeChanged() {
 
 function Translate(Language){
 
-	switch (){
-		case "French":
-			$("#Language").text("Français");
+	switch (Language){
+		case "French": 
+			$("#Language").text('Français');
 			break;
 			
 		default:
@@ -137,7 +137,7 @@ function Translate(Language){
 		
 			break;
 	}
-
+	console.log(Language);
 }
 
 function validate(evt) {
