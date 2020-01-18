@@ -154,9 +154,10 @@ function Translate(Language) {
         case "French":
             //DROPDOWN LANGUAGE
             $("#Language").text('Langue');
-            $("#French").setAttribute('selected', true);
+            document.getElementById('French').setAttribute('selected',true);
+            $("#French").prop("selected", "selected")
             $("#French").text('Français');
-            $("#English").setAttribute('selected', false);
+            $("#English").prop("selected", "")
             $("#English").text('Anglais');
             break;
 
@@ -164,9 +165,9 @@ function Translate(Language) {
         case "English":
             //DROPDOWN LANGUAGE
             $("#Language").text('Language');
-            $("#French").setAttribute('selected', false);
+            $("#French").prop("selected", "")
             $("#French").text('French');
-            $("#English").setAttribute('selected', true);
+            $("#English").prop("selected", "selected")
             $("#English").text('English');
             break;
     }
