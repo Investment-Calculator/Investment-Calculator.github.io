@@ -37,8 +37,14 @@
                             Language
                         </a>
                         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                            <a id="English" class="dropdown-item" onclick="Translate('English')"> <img src="Images\USA-Flag.png"/> English</a>
-                            <a id="French" class="dropdown-item" onclick="Translate('French')"> <img src="Images\France-Flag.png" /> French</a>
+                            <a id="OptionEnglish" class="dropdown-item active" onclick="Translate('English')"> 
+								<img src="Images\USA-Flag.png"/> 
+								<label id="English">English</label> 
+							</a>
+                            <a id="OptionFrench" class="dropdown-item" onclick="Translate('French')">
+								<img src="Images\France-Flag.png" /> 
+								<label id="French">French</label> 
+							</a>
                         </div>
                     </li>
 
@@ -71,61 +77,61 @@
 
     <div class="col-sm">
         <br />
-        <h3>Buy</h3>
+        <h3 id="LabelBuy">Buy</h3>
         <div class="Zone">
-            <label class="label">Quantity</label>
-            <input type="text" id="SharesBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+            <label id="LabelQuantityBuy" class="label">Quantity</label>
+            <input type="number" id="SharesBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label long">Purchase Price</label>
-			<label class="label short">P. Price</label>
-            <input type="text" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+            <label id="LabelPriceBuyLong" class="label long">Purchase Price</label>
+			<label id="LabelPriceBuyShort" class="label short">P. Price</label>
+            <input type="number" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
+            <label id="LabelSTFBuy" class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
             <input type="number" step="any" class="input-left" id="PercTOBBuy" value="0.35" oninput="CalculateBuy()" onkeypress='validate(event)' data-toggle="tooltip" title="Stock Trading Fee"/>
-            <input type="text" class="input-right" id="TOBBuy" value="0" disabled />
+            <input type="number" class="input-right" id="TOBBuy" value="0" disabled />
         </div>
         <div class="Zone">
-            <label class="label">Commission</label>
-            <input type="text" id="CommissionBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
+            <label id="LabelCommissionBuy" class="label">Commission</label>
+            <input type="number" id="CommissionBuy" class="input" value="0" oninput="CalculateBuy()" onkeypress='validate(event)' />
         </div>
 
         <br />
 
         <div class="Zone">
-            <label class="label">Total Cost</label>
-            <input type="text" id="ResultBuy" class="input" value="0" disabled />
+            <label id="LabelTotalCost" class="label">Total Cost</label>
+            <input type="number" id="ResultBuy" class="input" value="0" disabled />
 
         </div>
 
     </div>
     <div class="col-sm">
         <br />
-        <h3>Sell</h3>
+        <h3 id="LabelSell">Sell</h3>
         <div class="Zone">
-            <label class="label">Quantity</label>
-            <input type="text" id="SharesSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+            <label id="LabelQuantitySell" class="label">Quantity</label>
+            <input type="number" id="SharesSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label">Sell Price</label>
-            <input type="text" id="PriceSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+            <label id="LabelPriceSell" class="label">Sell Price</label>
+            <input type="number" id="PriceSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
         </div>
         <div class="Zone">
-            <label class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
+            <label id="LabelSTFSell" class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
             <input type="number" step="any" class="input-left" id="PercTOBSell" value="0.35" oninput="CalculateSell()" onkeypress='validate(event)' data-toggle="tooltip" title="Stock Trading Fee"/>
-            <input type="text" class="input-right" id="TOBSell" value="0" disabled />
+            <input type="number" class="input-right" id="TOBSell" value="0" disabled />
         </div>
         <div class="Zone">
-            <label class="label">Commission</label>
-            <input type="text" id="CommissionSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
+            <label id="LabelCommissionSell" class="label">Commission</label>
+            <input type="number" id="CommissionSell" class="input" value="0" oninput="CalculateSell()" onkeypress='validate(event)' />
         </div>
 
         <br />
 
         <div class="Zone">
-            <label class="label">Result</label>
-            <input type="text" id="ResultSell" class="input" value="0" disabled />
+            <label id="LabelResult" class="label">Result</label>
+            <input type="number" id="ResultSell" class="input" value="0" disabled />
 
         </div>
     </div>
@@ -134,20 +140,20 @@
         <br />
         <br />
 
-        <h3>Capital Gain</h3>
+        <h3 id="LabelCapitalGain">Capital Gain</h3>
         <div class="Zone">
-            <label class="label">Final Result</label>
-            <input type="text" id="Result" class="input" value="0" disabled />
+            <label id="LabelFinalResult" class="label">Final Result</label>
+            <input type="number" id="Result" class="input" value="0" disabled />
         </div>
         <div id="SicavTax">
             <div class="Zone Tax">
-                <label class="label">Tax (%)</label>
+                <label id="LabelTax" class="label">Tax (%)</label>
                 <input type="number" step="any" id="PercTax" class="input-left" value="30" onchange="CalculateTax()" onkeypress='validate(event)' />
-                <input type="text" id="Tax" class="input-right" value="0" disabled />
+                <input type="number" id="Tax" class="input-right" value="0" disabled />
             </div>
             <div class="Zone Tax">
-                <label class="label">Net</label>
-                <input type="text" id="Net" class="input" value="0" disabled />
+                <label id="LabelNet" class="label">Net</label>
+                <input type="number" id="Net" class="input" value="0" disabled />
 
             </div>
         </div>

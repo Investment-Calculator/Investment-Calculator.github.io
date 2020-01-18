@@ -125,51 +125,102 @@ function TypeChanged() {
     CalculateSell();
 }
 
-function validate(evt) {
-    var theEvent = evt || window.event;
-
-    // Handle paste
-    if (theEvent.type === 'paste') {
-        key = event.clipboardData.getData('text/plain');
-    } else {
-        // Handle key press
-        var key = theEvent.keyCode || theEvent.which;
-        key = String.fromCharCode(key)
-
-    }
-    var regex = /[0-9]|\./;
-    if (!regex.test(key)) {
-        theEvent.returnValue = false;
-        if (theEvent.preventDefault) theEvent.preventDefault();
-    }
-
-    var input = $("#" + theEvent.target["id"]).val();
-
-    if (key == "." && input.includes(".")) theEvent.returnValue = false;
-}
-
 function Translate(Language) {
 
     switch (Language) {
         case "French":
+			var myElement
+		
+			myElement = document.getElementById('OptionEnglish');
+			myElement.setAttribute("class", "dropdown-item");
+			
+			myElement = document.getElementById('OptionFrench');
+			myElement.setAttribute("class", "dropdown-item active");
+		
             //DROPDOWN LANGUAGE
             $("#Language").text('Langue');
-            document.getElementById('French').setAttribute('selected',true);
-            $("#French").prop("selected", "selected")
             $("#French").text('Français');
-            $("#English").prop("selected", "")
             $("#English").text('Anglais');
+			
+			//BUY LABELS
+			$("#LabelBuy").text('Achat');
+			$("#LabelQuantityBuy").text('Quantité');
+			$("#LabelPriceBuyLong").text('P.U. d\'achat');
+			$("#LabelPriceBuyShort").text('P.U. d\'achat');
+			$("#LabelSTFBuy").text('T.O.B. (%)');
+			myElement = document.getElementById('LabelSTFBuy');
+			myElement.title = 'Taxe sur les opérations boursières';
+			myElement = document.getElementById('PercTOBBuy');
+			myElement.title = 'Taxe sur les opérations boursières';
+			$("#LabelCommissionBuy").text('Commission');
+			$("#LabelTotalCost").text('Coût d\'achat');
+			
+			//SELL LABELS
+			$("#LabelSell").text('Vente');
+			$("#LabelQuantitySell").text('Quantité');
+			$("#LabelPriceSell").text('P.U. de vente');
+			$("#LabelSTFSell").text('T.O.B. (%)');
+			myElement = document.getElementById('LabelSTFSell');
+			myElement.title = 'Taxe sur les opérations boursières';
+			myElement = document.getElementById('PercTOBSell');
+			myElement.title = 'Taxe sur les opérations boursières';
+			$("#LabelCommissionSell").text('Commission');
+			$("#LabelResult").text('Résultat de la vente');
+			
+			//CAPITAL GAIN LABELS
+			$("#LabelCapitalGain").text('Plus-value');
+			$("#LabelFinalResult").text('Résultat final');
+			$("#LabelTax").text('Impôts (%)');
+			$("#LabelNet").text('Montant net');
             break;
 
         default:
         case "English":
-            //DROPDOWN LANGUAGE
-            $("#Language").text('Language');
-            $("#French").prop("selected", "")
+            var myElement;
+			
+			myElement = document.getElementById('OptionFrench');
+			myElement.setAttribute("class", "dropdown-item");
+			
+			myElement = document.getElementById('OptionEnglish');
+			myElement.setAttribute("class", "dropdown-item active");
+			
+			//DROPDOWN LANGUAGE
+            $("#Language").text('Language');      
             $("#French").text('French');
-            $("#English").prop("selected", "selected")
             $("#English").text('English');
+			
+			//BUY LABELS
+			$("#LabelBuy").text('Buy');
+			$("#LabelQuantityBuy").text('Quantity');
+			$("#LabelPriceBuyLong").text('Purchase Price');
+			$("#LabelPriceBuyShort").text('P. Price');
+			$("#LabelSTFBuy").text('S.T.F. (%)');
+			myElement = document.getElementById('LabelSTFBuy');
+			myElement.title = 'Stock Trading Fee';
+			myElement = document.getElementById('PercTOBBuy');
+			myElement.title = 'Stock Trading Fee';
+			$("#LabelCommissionBuy").text('Commission');
+			$("#LabelTotalCost").text('Total Cost');
+			
+			//SELL LABELS
+			$("#LabelSell").text('Sell');
+			$("#LabelQuantitySell").text('Quantity');
+			$("#LabelPriceSell").text('Sell Price');
+			$("#LabelSTFSell").text('S.T.F. (%)');
+			myElement = document.getElementById('LabelSTFSell');
+			myElement.title = 'Stock Trading Fee';
+			myElement = document.getElementById('PercTOBSell');
+			myElement.title = 'Stock Trading Fee';
+			$("#LabelCommissionSell").text('Commission');
+			$("#LabelResult").text('Result');
+			
+			//CAPITAL GAIN LABELS
+			$("#LabelCapitalGain").text('Capital Gain');
+			$("#LabelFinalResult").text('Final Result');
+			$("#LabelTax").text('Tax (%)');
+			$("#LabelNet").text('Net');
+			
             break;
     }
-    console.log(Language);
+
 }
