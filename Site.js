@@ -125,21 +125,6 @@ function TypeChanged() {
     CalculateSell();
 }
 
-function Translate(Language){
-
-	switch (Language){
-		case "French": 
-			$("#Language").text('Français');
-			break;
-			
-		default:
-		case "English":
-		
-			break;
-	}
-	console.log(Language);
-}
-
 function validate(evt) {
     var theEvent = evt || window.event;
 
@@ -161,4 +146,19 @@ function validate(evt) {
     var input = $("#" + theEvent.target["id"]).val();
 
     if (key == "." && input.includes(".")) theEvent.returnValue = false;
+}
+
+function Translate(Language) {
+
+    switch (Language) {
+        case "French":
+            $("#Language").text('Français');
+            break;
+
+        default:
+        case "English":
+
+            break;
+    }
+    console.log(Language);
 }
