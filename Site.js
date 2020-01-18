@@ -129,7 +129,7 @@ function Translate(Language){
 
 	switch (){
 		case "French":
-			
+			$("#Language").text("Français");
 			break;
 			
 		default:
