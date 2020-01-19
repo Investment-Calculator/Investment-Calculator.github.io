@@ -226,5 +226,5 @@ function Translate(Language) {
 }
 
 function SelectAllText(x){
-	x.select();
+	x.setSelectionRange(0, x.value.length);
 }
