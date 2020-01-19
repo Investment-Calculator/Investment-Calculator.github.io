@@ -80,21 +80,21 @@
         <h3 id="LabelBuy">Buy</h3>
         <div class="Zone">
             <label id="LabelQuantityBuy" class="label">Quantity</label>
-            <input type="number" id="SharesBuy" class="input" value="0" oninput="CalculateBuy()" onfocus='SelectAllText(this)' />
+            <input type="number" id="SharesBuy" class="input" Placeholder="0" oninput="CalculateBuy()"  />
         </div>
         <div class="Zone">
             <label id="LabelPriceBuyLong" class="label long">Purchase Price</label>
 			<label id="LabelPriceBuyShort" class="label short">P. Price</label>
-            <input type="number" id="PriceBuy" class="input" value="0" oninput="CalculateBuy()" onfocus='SelectAllText(this)' />
+            <input type="number" id="PriceBuy" class="input" Placeholder="0" oninput="CalculateBuy()"  />
         </div>
         <div class="Zone">
             <label id="LabelSTFBuy" class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
-            <input type="number" step="any" class="input-left" id="PercTOBBuy" value="0.35" oninput="CalculateBuy()" onfocus='SelectAllText(this)' data-toggle="tooltip" title="Stock Trading Fee"/>
+            <input type="number" step="any" class="input-left" id="PercTOBBuy" Placeholder="0" oninput="CalculateBuy()"  data-toggle="tooltip" title="Stock Trading Fee"/>
             <input type="number" class="input-right" id="TOBBuy" value="0" disabled />
         </div>
         <div class="Zone">
             <label id="LabelCommissionBuy" class="label">Commission</label>
-            <input type="number" id="CommissionBuy" class="input" value="0" oninput="CalculateBuy()" onfocus='SelectAllText(this)' />
+            <input type="number" id="CommissionBuy" class="input" Placeholder="0" oninput="CalculateBuy()"  />
         </div>
 
         <br />
@@ -111,20 +111,20 @@
         <h3 id="LabelSell">Sell</h3>
         <div class="Zone">
             <label id="LabelQuantitySell" class="label">Quantity</label>
-            <input type="number" id="SharesSell" class="input" value="0" oninput="CalculateSell()" onfocus='SelectAllText(this)' />
+            <input type="number" id="SharesSell" class="input" Placeholder="0" oninput="CalculateSell()"  />
         </div>
         <div class="Zone">
             <label id="LabelPriceSell" class="label">Sell Price</label>
-            <input type="number" id="PriceSell" class="input" value="0" oninput="CalculateSell()" onfocus='SelectAllText(this)' />
+            <input type="number" id="PriceSell" class="input" Placeholder="0" oninput="CalculateSell()"  />
         </div>
         <div class="Zone">
             <label id="LabelSTFSell" class="label" data-toggle="tooltip" title="Stock Trading Fee" >S.T.F. (%)</label>
-            <input type="number" step="any" class="input-left" id="PercTOBSell" value="0.35" oninput="CalculateSell()" onfocus='SelectAllText(this)' data-toggle="tooltip" title="Stock Trading Fee"/>
+            <input type="number" step="any" class="input-left" id="PercTOBSell" Placeholder="0" oninput="CalculateSell()"  data-toggle="tooltip" title="Stock Trading Fee"/>
             <input type="number" class="input-right" id="TOBSell" value="0" disabled />
         </div>
         <div class="Zone">
             <label id="LabelCommissionSell" class="label">Commission</label>
-            <input type="number" id="CommissionSell" class="input" value="0" oninput="CalculateSell()" onfocus='SelectAllText(this)' />
+            <input type="number" id="CommissionSell" class="input" Placeholder="0" oninput="CalculateSell()"  />
         </div>
 
         <br />
@@ -148,7 +148,7 @@
         <div id="SicavTax">
             <div class="Zone Tax">
                 <label id="LabelTax" class="label">Tax (%)</label>
-                <input type="number" step="any" id="PercTax" class="input-left" value="30" onchange="CalculateTax()" onfocus='SelectAllText(this)' />
+                <input type="number" step="any" id="PercTax" class="input-left" Placeholder="0" onchange="CalculateTax()"  />
                 <input type="number" id="Tax" class="input-right" value="0" disabled />
             </div>
             <div class="Zone Tax">
