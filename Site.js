@@ -224,3 +224,7 @@ function Translate(Language) {
     }
 
 }
+
+function SelectAllText(x){
+	x.select();
+}
